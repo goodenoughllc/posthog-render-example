@@ -2,6 +2,7 @@ databases:
 - name: posthog
   databaseName: posthog
   user: posthog
+  postgresMajorVersion: 14
   plan: basic-256mb # PostHog can quickly use up hundreds of MBs of disk space, depending on the volume of analytics
 
 services:
