@@ -13,7 +13,7 @@ services:
   dockerContext: ./server
   autoDeploy: false
   envVars:
-  - key: SKIP_SERVICE_VERSION_REQUIREMENTS=1
+  - key: SKIP_SERVICE_VERSION_REQUIREMENTS
     value: 1 # Render's 14 Postgres is 14.17
   - key: IS_BEHIND_PROXY
     value: 1
