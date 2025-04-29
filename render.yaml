@@ -19,12 +19,12 @@ services:
   - key: POSTHOG_REDIS_HOST
     fromService:
       name: posthog-redis
-      type: pserv
+      type: keyvalue
       property: host
   - key: POSTHOG_REDIS_PORT
     fromService:
       name: posthog-redis
-      type: pserv
+      type: keyvalue
       property: port
   - key: DATABASE_URL
     fromDatabase:
@@ -35,15 +35,9 @@ services:
   - key: DEPLOYMENT
     value: render
 
-- type: pserv
+- type: keyvalue
   name: posthog-redis
-  env: docker
-  autoDeploy: false
-  repo: https://github.com/render-examples/redis.git
-  disk:
-    name: data
-    mountPath: /var/lib/redis
-    sizeGB: 10
+  ipAllowList: []
 
 - type: worker
   name: posthog-worker
