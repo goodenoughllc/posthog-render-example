@@ -51,12 +51,12 @@ services:
   - key: POSTHOG_REDIS_HOST
     fromService:
       name: posthog-redis
-      type: pserv
+      type: keyvalue
       property: host
   - key: POSTHOG_REDIS_PORT
     fromService:
       name: posthog-redis
-      type: pserv
+      type: keyvalue
       property: port
   - key: DATABASE_URL
     fromDatabase:
@@ -80,12 +80,12 @@ services:
   - key: POSTHOG_REDIS_HOST
     fromService:
       name: posthog-redis
-      type: pserv
+      type: keyvalue
       property: host
   - key: POSTHOG_REDIS_PORT
     fromService:
       name: posthog-redis
-      type: pserv
+      type: keyvalue
       property: port
   - key: DATABASE_URL
     fromDatabase:
